@@ -30,7 +30,7 @@ public interface RecipeModel extends  RecipeModelState{
      * Increases the serving amounts of a recipe.
      * @param newServing is the serving size that you want in the recipe.
      */
-    void changeServings(int newServing);
+    void changeServings(double newServing);
 }
 
 

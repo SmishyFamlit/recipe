@@ -36,6 +36,8 @@ public class RecipeTest {
                 "Salt : 3 Tablespoons\n" +
                 "Cloves of garlic grated : 4 Tablespoons\n" +
                 "Can of Chipotle peppers in adobe : 1 \n", recipeView.showIngredients());
+        chickenRecipe.changeServings(50);
+        assertEquals("",recipeView.showIngredients());
 
 
 

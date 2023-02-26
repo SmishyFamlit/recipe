@@ -29,6 +29,11 @@ public class Recipe implements  RecipeModel{
     }
 
 
+    /**
+     * Adds items with their amounts in to the recipe.
+     * @param ingredient the item that is being added to the recipe.
+     * @param amountUnit how much ingredient is being added with units.
+     */
     public void add(String ingredient, ArrayList amountUnit) {
 
         this.ingredients.put(ingredient, amountUnit);
@@ -57,9 +62,15 @@ public class Recipe implements  RecipeModel{
 //    }
 
     @Override
-    public void changeServings(int newServing) {
+    public void changeServings(double newServing) {
+        double factorOfChange = newServing / this.servings;
 
+        for (Map.Entry<String, ArrayList> entry: this.ingredients.entrySet()) {
+            double newAmount =  new Double(entry.getValue().get(0).toString());
+            newAmount *= factorOfChange;
+            entry.getValue().set(0, newAmount);
 
+        }
     }
 
     /**
